@@ -1,0 +1,7 @@
+---
+# defaults file for ansible-role-setup_ssh_keys
+
+ssk_keys:
+  - ssk_user:
+    ssk_state:
+    ssk_keyfile: ''

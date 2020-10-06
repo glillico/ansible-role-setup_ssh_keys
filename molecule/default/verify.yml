@@ -1,0 +1,26 @@
+---
+# This is an example playbook to execute Ansible tests.
+
+- name: Verify
+  hosts: all
+
+  tasks:
+    - name: Retrieve the file information for '/home/testuser/.ssh/authorized_keys'.
+      ansible.builtin.stat:
+        path: '/home/testuser/.ssh/authorized_keys'
+      register: remote_file
+
+    - name: Test that the '/home/testuser/.ssh/authorized_keys' file was created correctly.
+      ansible.builtin.assert:
+        that:
+          - remote_file.stat.exists
+          - remote_file.stat.isreg
+          - remote_file.stat.path == '/home/testuser/.ssh/authorized_keys'
+          - remote_file.stat.mode == '0600'
+
+    - name: Check ssh public key.
+      ansible.posix.authorized_key:
+        user: testuser
+        state: present
+        key: "{{ lookup('file', 'files/testuser.pub') }}"
+      check_mode: true

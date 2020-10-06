@@ -1,0 +1,21 @@
+---
+- name: Converge
+  hosts: all
+  become: true
+
+  pre_tasks:
+    - name: Include variables.
+      include_vars: vars/main.yml
+
+    - name: Create user account.
+      ansible.builtin.user:
+        name: "{{ item.seu_name | default(omit) }}"
+        comment: "{{ item.seu_comment | default(omit) }}"
+        state: "{{ item.seu_state | default(omit) }}"
+        shell: '{{ item.seu_shell | default(omit) }}'
+      with_items: "{{ users }}"
+
+  tasks:
+    - name: Include ansible-role-setup_ssh_keys.
+      include_role:
+        name: ansible-role-setup_ssh_keys

@@ -1,0 +1,9 @@
+---
+# tasks file for ansible-role-setup_ssh_keys
+
+- name: Deploy ssh public key.
+  ansible.posix.authorized_key:
+    user: '{{ item.ssk_user }}'
+    state: '{{ item.ssk_state }}'
+    key: "{{ lookup('file', '{{ item.ssk_keyfile }}') }}"
+  with_items: '{{ ssk_keys }}'

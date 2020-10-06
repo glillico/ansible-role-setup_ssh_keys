@@ -1,0 +1,13 @@
+---
+# vars file for setup_ssh_keys
+
+users:
+  - seu_name: testuser
+    seu_comment: This Is A Test User
+    seu_state: present
+    seu_shell: /bin/bash
+
+ssk_keys:
+  - ssk_user: testuser
+    ssk_state: present
+    ssk_keyfile: 'molecule/default/files/testuser.pub'
