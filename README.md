@@ -1,6 +1,6 @@
 # Ansible Role : setup_ssh_keys
 
-[![Build Status](https://github.com/glillico/ansible-role-setup_ssh_keys/workflows/build/badge.svg)](https://github.com/glillico/ansible-role-setup_ssh_keys)
+[![Build Status](https://github.com/glillico/ansible-role-setup_ssh_keys/workflows/build/badge.svg)](https://github.com/glillico/ansible-role-setup_ssh_keys/actions?query=workflow%3Abuild)
 
 This role will add or remove a defined SSH authorized key for a user.
 
