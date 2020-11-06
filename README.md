@@ -1,6 +1,6 @@
 # Ansible Role : setup_ssh_keys
 
-[![molecule](https://github.com/glillico/ansible-role-setup_ssh_keys/workflows/molecule/badge.svg)](https://github.com/glillico/ansible-role-setup_ssh_keys/actions?query=workflow%3Amolecule)
+[![CI](https://github.com/glillico/ansible-role-setup_ssh_keys/workflows/CI/badge.svg)](https://github.com/glillico/ansible-role-setup_ssh_keys/actions?query=workflow%3ACI)
 
 This role will add or remove a defined SSH authorized key for a user.
 
