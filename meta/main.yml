@@ -1,5 +1,6 @@
 galaxy_info:
-  author: Graham Lillico
+  role_name: setup_ssh_keys
+  author: glillico
   description: Adds or removes a defined SSH authorized key.
   license: license (MIT)
   min_ansible_version: 2.4
