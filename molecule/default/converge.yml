@@ -15,7 +15,5 @@
         shell: '{{ item.seu_shell | default(omit) }}'
       with_items: "{{ users }}"
 
-  tasks:
-    - name: Include ansible-role-setup_ssh_keys.
-      include_role:
-        name: ansible-role-setup_ssh_keys
+  roles:
+    - role: glillico.setup_ssh_keys
